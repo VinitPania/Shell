@@ -1,0 +1,17 @@
+Integer  Comparision 
+
+-eq is equal to the number 
+-ne Not equal to the number 
+-gt,> is greater than the number 
+-ge,>= greater than or equal to the number 
+-lt,< lesser than the number 
+-le,<= lesser or equal to number 
+
+String Comparision 
+
+=  equal to string 
+== equal to String
+!= not equall to string 
+< less than string 
+> Greater than string 
+-z  String is null
