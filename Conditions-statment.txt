@@ -20,3 +20,4 @@ String Comparision
 -z  String is null
 
 
+IFS -> means Internal Field separator 

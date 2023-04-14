@@ -1,0 +1,41 @@
+For loops Syntax  
+1 type 
+for variable in 1,2,3,4,5,6,7 ..... N 
+do 
+    condition 1
+    condition 2
+    condition 3
+done 
+
+2 type
+for $variable in  file1 file2 file3
+do 
+    cammmand on $variable1
+    cmmand2 
+done 
+
+
+3type
+for output in $(linux or unix cmd here) do ;
+    cmmand1 on $output
+    cmmand2 on $output
+    cmmandN
+done 
+
+4type 
+for ((EXP1 ; EXP2 ; EXP3))
+do 
+    cmd1 
+    cmd2 
+    cmd3
+done 
+
+select loops Syntax
+
+select varname in list 
+do 
+    cmd1
+    cmmand2
+    cmd3
+    cmd n
+done 

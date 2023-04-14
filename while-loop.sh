@@ -2,7 +2,7 @@
 
 #printing the number using while loop
 n=1
-while [ $n -le 10 ] # give the space you idiot 
+while [ $n -le 10 ] # if the n variable is less than 10 enter in the loop else exit 
 do
     echo "The number  is $n"
     n=$(($n+1))
