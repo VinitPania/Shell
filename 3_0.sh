@@ -43,3 +43,7 @@ do
     echo $file
     fi
 done 
+
+/ --> Act as a seperator
+`` ---> is a baktick use to execute the command 
+: ----> it is a no op , a do-no nothing operation   
