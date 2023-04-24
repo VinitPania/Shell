@@ -12,3 +12,6 @@ done
 # the output will be something like this
 #/bin/xcalc
 #/usr/bin/xcalc
+
+: ${username=`whoami`}
+echo $username
