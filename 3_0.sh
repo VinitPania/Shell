@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 #Comments can be used between the pipes 
 #semicolumns are use to write multiple code in a single line 
@@ -46,4 +46,18 @@ done
 
 / --> Act as a seperator
 `` ---> is a baktick use to execute the command 
-: ----> it is a no op , a do-no nothing operation   
+: ----> it is a no op , a do-no nothing operation, also used as a null command  
+
+# : As A placeholder 
+: ${username=`whoami`}
+echo $username
+
+
+##      : As a seperator 
+echo $PATH
+#/home/jenkins/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin
+#The : here is used as a seperator in the $PATH variable 
+
+# : is also used as a function refer --> 3_1.sh 
+
+# A colon can serve as a placeholder in an otherwise empty function.

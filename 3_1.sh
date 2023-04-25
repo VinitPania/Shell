@@ -13,5 +13,21 @@ done
 #/bin/xcalc
 #/usr/bin/xcalc
 
-: ${username=`whoami`}
-echo $username
+echo $PATH #Here : is used as a seperator 
+
+# :(){
+#     echo "The function name is "$FUNCNAME" "
+# }
+
+ 
+# The function name is :
+
+#Demo of : as a place holder 
+
+not_empty ()
+{
+    : 
+} # Contains a : (null command), and so is not empty.
+
+not_empty # While running this function it wont create an error
+
