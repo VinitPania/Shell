@@ -26,8 +26,7 @@ echo $PATH #Here : is used as a seperator
 
 not_empty ()
 {
-    : 
+    : #Here the colon is a place holder.
 } # Contains a : (null command), and so is not empty.
 
-not_empty # While running this function it wont create an error
-
+not_empty # While running this function it wont create an errors 
