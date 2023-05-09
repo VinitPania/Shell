@@ -126,3 +126,35 @@ echo {file1,file2}\ :{\ A," B",' C'}
 
 #Extended Brace 
 echo {a..z} #output a b c d e f g h i j k l m n o p q r s t u v w x y z
+echo {0..9} #output 0 1 2 3 4 5 6 7 8 9 10  
+
+# base_charset=( {A..Z} {a..z} {0..9} + / = )
+# echo $base_charset
+
+#Block of code {   code }  
+#It create an anonymous function 
+# Unlike a function a variable inside a code block remain visible to the remainder of the script 
+#{ local a; a=123 } --> local variable can be used in a function not in blocks 
+#The code block enclosed by the braces may have I/O Redirected to and from it 
+#Example 
+a=123
+{a=321; }
+echo "a=$a" #output is a=321
+
+
+#--->{} can used as a place holder for output text
+ls . | xargs -i -t cp ./{} $1
+#            ^^         ^^
+
+# From "ex42.sh" (copydir.sh) example.
+
+# -----> For adding an array element ,also used as to delineate a range of characters 
+Array[1]=slot_1
+echo ${Array[1]}
+
+# $[..] For integer expansion 
+a=3
+b=3
+echo $[$a+$b] #6
+echo $[$a*$b] #9
+

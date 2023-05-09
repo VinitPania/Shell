@@ -30,3 +30,16 @@ not_empty ()
 } # Contains a : (null command), and so is not empty.
 
 not_empty # While running this function it wont create an errors 
+
+#Example of Code Blocks and I/O Direction 
+File=/home/jenkins/Desktop/Bash/Conditions-statment.txt
+{
+    read line1
+    read line2
+} < $File
+
+echo "First line in $File iS:"
+echo "$line1"
+echo 
+echo "Second Line in $File is:"
+echo "$line2"
