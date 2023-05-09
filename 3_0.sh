@@ -70,14 +70,59 @@ echo $PATH
 # ---> *  Wild card asterisk is used for globbing. By itself it will match every filename in a given directory.
     # Also represent the any number of zero character in a regular expresion.
    # **  exponentiation or extending file matching globbing 
+
+
+
 # ---> ? Test operator ; it indicates the test for a condition 
 #conditionl?result-if-true:result-if-false
 var1=2121
 (( var0 = var1<98?9:21 ))  #Short form 
-#Long form
+#Long form of the same above expression 
 if [ "var1" -lt 98 ]
 then
     var0=9
 else
 var0=21
 fi
+# It is used  filename expansion globbing 
+
+
+# ------? $ A Prefixing variable name indicates the value the vriable holds 
+#End of line Regular expression  a "$" indicates end of line in reglar expression
+
+#----> $? it hold the exit status of a command of a function or a shell script 
+
+#----> $$ it hold the process id of the script in which it appears 
+
+# -----> () the commands which is written in the parentheses it starts a subshell
+# Variables inside parentheses () , within the subshell, are not visible to the rest of the script. 
+#The parent process, the script, cannot read variables created in the child process, the subshell
+# Example 
+a=123
+(a=321;)
+echo $a
+# a inside () is act as a local variabele 
+
+#-----> Array Initialization
+Array=(element1 element2 element3)
+echo $Array
+
+#Brace Expansion 
+echo \"{These,words,are,quoted}\" #Brace Expanssion 
+# output--> "These" "words" "are" "quoted"
+
+cat {file1,file2,file3} > all_file
+#concaniate the file1 , file2 ,file3 combining into a single file called all_file 
+
+cp all_file{txt,backup}
+#Copies all_file.txt content to all_file.backup 
+
+######################+++++++++++++++++++++++++++++++++++++#########################
+#No spaces allowed within the braces unless the spaces are quoted or escaped.
+###############################++++++++++++++++++++++++++++++++#######################
+
+echo {file1,file2}\ :{\ A," B",' C'}
+#file1 : A file1 : B file1 : C file2 : A file2 : B file2 : C
+
+#Extended Brace 
+echo {a..z} #output a b c d e f g h i j k l m n o p q r s t u v w x y z
