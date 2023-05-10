@@ -158,3 +158,20 @@ b=3
 echo $[$a+$b] #6
 echo $[$a*$b] #9
 
+# \<,\> Word Boundary in regular expression 
+#grep '\<the\>' textfile
+
+# |----> Pipe : Passes the (stdout) of previous command to the input (stdin) of the next one or to the hell .
+# This method chainning the commands together 
+# echo ls -l | sh 
+# cat *.lst | sort | uniq
+# Merges and sorts all ".lst" files, then deletes duplicate lines 
+# The pipe runs as the child process and therefore cannot alter script variables 
+# If one of the commands in the pipe aborts this prematurely terminates execution of the pipe
+# Called a broken pipe this condition sends a SEGPIPE signal
+
+# ------> & -> Run a job in background.
+# A command followed by an & will run in the background 
+# Wthin the script commands and  even loops my run in background 
+
+
