@@ -104,3 +104,14 @@ do
 done 
 
 echo #This 'echo' sometimes will not display.
+
+# Backup of all files 
+#Backups all the file in the current directory that are modified within last 24 hours in a tar ball 
+BACKUPFILE=backup-$(date +%d-%m-%Y)
+
+archive=${1:-$BACKUPFILE}
+
+tar cvf - `find . -mtime -1 -type f -print` > $archive.tar
+gzip $archive.tar
+echo "Directory $PWD backed up in archive file \"$archive.tar.gz\"."
+

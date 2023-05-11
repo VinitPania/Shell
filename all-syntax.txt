@@ -70,3 +70,17 @@ All Flag
  -ef   files f1 and f2 are hard links to the same file   f1 -ef f2
     
  !     "not" -- reverses the sense of the tests above (returns true if condition absent)
+
+Tar flag
+tar cf - . 
+c It create a new archive 
+f file option 
+-  designates a target file as a stdout 
+. do this in the current directory
+
+tar xpvf -
+x unarchive and preserve the ownership 
+p preserve the file permission 
+v send verbose message to stdout 
+f file option
+ 
