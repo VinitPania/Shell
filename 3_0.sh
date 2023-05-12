@@ -186,6 +186,13 @@ echo $[$a*$b] #9
 #Examples rm -- -badname 
 #Example set -- $variable 
 
+  
 # ~ the correspond to $HOME internal variable
 # ~+ correspond to the $PWD internal variable 
 # ~-  correspond to $OPWD internal variable 
+
+# ^ beginning of the line .In re it represent as a beginning of a line of text 
+# ^,^^ Uppercase conversion in parameter substitution
+
+
+# Control Character 

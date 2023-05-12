@@ -1,0 +1,7 @@
+CTRL+A -------> Moves a cursor to beginning of line of text.
+CTRl+B -------> Backspace (nondestructive)
+CTRL+C -------> Break.Terminate a foregound job 
+CTRL+D -------> Log out from a shell(similar to exit)
+CTRL+E -------> Moves cursor to the end of line of text (command-line)
+CTRL+F -------> Moves cursor forword one character position (on the command-line)
+CTRL+G -------> Rubout Ereases the character the cursor backs over while backspacing 
