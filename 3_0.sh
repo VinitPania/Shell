@@ -174,4 +174,18 @@ echo $[$a*$b] #9
 # A command followed by an & will run in the background 
 # Wthin the script commands and  even loops my run in background 
 
+# - Option flag for a command or filter .Prefix for an operatior 
 
+`ls -al `
+#   ^
+
+# -- The double dash  prefixes long (verbatim) options to commands
+`sort --ignore-leading-blanks`
+#Used with Bash Builtin it means the end of options to that particular command 
+#It comes handy to for removing the files which start with - and it is also used in the conjuction with set 
+#Examples rm -- -badname 
+#Example set -- $variable 
+
+# ~ the correspond to $HOME internal variable
+# ~+ correspond to the $PWD internal variable 
+# ~-  correspond to $OPWD internal variable 

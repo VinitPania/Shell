@@ -105,6 +105,9 @@ done
 
 echo #This 'echo' sometimes will not display.
 
+
+echo '++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+echo 'It is use for backing up the file at the end of the day'
 # Backup of all files 
 #Backups all the file in the current directory that are modified within last 24 hours in a tar ball 
 BACKUPFILE=backup-$(date +%d-%m-%Y)
@@ -114,4 +117,12 @@ archive=${1:-$BACKUPFILE}
 tar cvf - `find . -mtime -1 -type f -print` > $archive.tar
 gzip $archive.tar
 echo "Directory $PWD backed up in archive file \"$archive.tar.gz\"."
+# The above code will fail due to filename contain blank character
+find . -mtime -1 -type f -print0 | xargs -0 tar rvf "archive.tar"
 
+
+
+#Moves entire file tree from one directory to another 
+(cd /source/directory && tar cf - . ) | (cd /dest/directory && tar xpvf -)
+# in the above example it create an tar ball of all the files and it is  untaring in the destination folder 
+tar cf - .| (cd ../dest/directory; tar xpvf -)
