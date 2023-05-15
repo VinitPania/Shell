@@ -10,4 +10,16 @@ CTRl+I -------> Horizontal Tab
 CTRL+J -------> Newline (line feed).In a script, may also be expressed in a octal notation -- '\012' or in hexadecimal -- '\x0a'
 CTRL+K -------> Vertical Tab . 
 CTRL+L ----> Formfeed .It has a  same effect as a clear cmd .When send to the printer it causes an advance to end of the paper sheet 
-CTRL+M ----> Carriage return
+CTRL+M ----> Carriage return 
+CTRL+N ----> Erases a line of text recalled from history buffer 
+CTRL+O -----> Issues a new line 
+CTRL+P ----> Recalls last command history 
+CTRL+Q -----> Resume ; This resume stdin in a terminal 
+CTRl+R ------> Backword search for test in the history buffer 
+CTRL+S ------->  Suspend Off ; This Freezes stdin a terminal 
+CTRL+T -------> Reverses the position of the character the cursor on with the previous character 
+CTRL+V ------> For Inputting the Text 
+CTRL+W ------> It Ereases the character of the cursor backword to the first instances of whitespace 
+CTRL+X ------> Cuts Hilighted text and copies to clipboard 
+CTRL+Y ------> Paste back the previously ereased with (CTRL+U,CTRL+W)
+CTRL+Z ------> Pauses on fourgroung job 

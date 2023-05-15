@@ -158,5 +158,5 @@ echo >&2 #CtRL+K Vertical Tab.
 
 
 ###### A better example of the effect of a vertical tab is" 
-var=$'\x0aThis is a bottom line \x0bThis is the top \x0a'
+var=$'\x0aThis is a top line \x0bThis is the bottom \x0a'
 echo "$var"
