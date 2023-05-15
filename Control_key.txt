@@ -5,3 +5,6 @@ CTRL+D -------> Log out from a shell(similar to exit)
 CTRL+E -------> Moves cursor to the end of line of text (command-line)
 CTRL+F -------> Moves cursor forword one character position (on the command-line)
 CTRL+G -------> Rubout Ereases the character the cursor backs over while backspacing 
+CTRL+H -------> Rubout(DEstructive Backspace).Erases character the cursor back over while backspacing 
+CTRl+I -------> Horizontal Tab 
+CTRL+J -------> Newline (line feed).In a script, may also be expressed in a octal notation -- '\012' or in hexadecimal -- '\x0a'

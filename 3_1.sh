@@ -126,3 +126,21 @@ find . -mtime -1 -type f -print0 | xargs -0 tar rvf "archive.tar"
 (cd /source/directory && tar cf - . ) | (cd /dest/directory && tar xpvf -)
 # in the above example it create an tar ball of all the files and it is  untaring in the destination folder 
 tar cf - .| (cd ../dest/directory; tar xpvf -)
+
+#Embedding Ctrl+H in a string 
+echo="^H^H" #Two CTRL+H's -- backspaces
+            #CTRL+V CTRL+H, using vi,vim 
+echo "abcdef"    # abcdef 
+echo 
+echo -n "abcdef$a " #abcde f
+#Space at the end         ^ Backspaces twices.
+echo 
+echo -n "abcdef$a"   #abcdef
+                    #      ^ Dosen't backspace (Why)
+echo; echo  # Result may not be quite as expected 
+#######################################################
+# Now , trying different method .
+rubout="^H^H^H^H^H"
+sleep 2
+echo -n "$rubout"
+sleep 2
