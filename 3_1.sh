@@ -144,3 +144,19 @@ rubout="^H^H^H^H^H"
 sleep 2
 echo -n "$rubout"
 sleep 2
+
+# Carriage Return 
+read -n 1 -s -p  $'Control-M leaves cursor at the beginning of the line. Press Enter . \xod' 
+echo >&2
+read -n 1 -s -p $'Control-J leaves cursor on next line. \x0a '
+echo >&2 
+
+########
+
+read -n 1 -s -p $'And Control-K\x0b goes staright down '
+echo >&2 #CtRL+K Vertical Tab.
+
+
+###### A better example of the effect of a vertical tab is" 
+var=$'\x0aThis is a bottom line \x0bThis is the top \x0a'
+echo "$var"

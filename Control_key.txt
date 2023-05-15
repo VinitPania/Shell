@@ -8,3 +8,6 @@ CTRL+G -------> Rubout Ereases the character the cursor backs over while backspa
 CTRL+H -------> Rubout(DEstructive Backspace).Erases character the cursor back over while backspacing 
 CTRl+I -------> Horizontal Tab 
 CTRL+J -------> Newline (line feed).In a script, may also be expressed in a octal notation -- '\012' or in hexadecimal -- '\x0a'
+CTRL+K -------> Vertical Tab . 
+CTRL+L ----> Formfeed .It has a  same effect as a clear cmd .When send to the printer it causes an advance to end of the paper sheet 
+CTRL+M ----> Carriage return
