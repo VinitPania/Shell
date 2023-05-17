@@ -85,3 +85,22 @@ unset uninitialized_variable #unset it
 echo "uninitialized_variale  = $uninitialized_variable"
 #It still has a null value 
 echo
+
+#+++++++++++++++++NOTE+++++++++=+  
+# An uninitialized variable has a "null" value -- no value is assigned 
+# NOT EVEN ZERO 
+
+if [ -z "$uninitialized_variable"  ]
+then 
+    echo "\$unassigned_variable is NULL"
+fi # "$unassigned_variable is NULL"
+
+# Using a variable before assign a value to it may cause problems .
+# It is nevertheless possible to perform arithmetic operations on an unitilized variable 
+
+echo "$uninitialized_variable "   # (blank line )
+let "uninitialized_variable += 5" # Add 5 to it 
+echo "$uninitialized_variable"  # 5 
+
+# conclusion 
+# An unitialized variable has no value however it evaluates as 0 in an arithmetic operation
