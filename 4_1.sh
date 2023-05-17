@@ -12,3 +12,7 @@ echo $variable1 #Referance  the name of the variable
 
 # The only time the variable is without prefix is when it is declared or assigned.
 #When exported in an in an arithmetic expression within double parentheses((...)).
+# Enclosing a referenced value in the double quotes ("....")does not interfaces with variable substitution.
+# This is called partial quoting sometimes referred as "Weak Quoting"
+# Using single quotes('...') causes the variable name to be literally , and no  subustiution will take place.
+
