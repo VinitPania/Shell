@@ -135,3 +135,24 @@ echo "The value of \"a\" is $a "
 echo 
 
 
+# +++++++++++++++Variable Assignment Plain and Fancy+++++++++++++++++
+a=121 #Simple case 
+echo "Value of a \"a\" is $a "
+b=$a 
+echo "Value of \"b\" is $b "
+
+# Now we are getting a little bit fancier 
+a=`echo Hello!` #Assigns  result of 'echo' command to 'a'
+echo $a
+#Note that including an exclamation mark (!) within a command subustion construct will not work from the command line since the triggers the Bash "history mechanism."
+#Inside a script , however  the history function are disabled by default 
+
+a=`ls -l` #Assign result of 'ls -l' to 'a'
+echo $a   # Unquoted, however , it removes tab and newlines
+
+echo 
+
+echo "$a"   #The quoted variables preserve the Whitespace
+
+
+ 
