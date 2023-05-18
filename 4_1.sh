@@ -16,3 +16,8 @@ echo $variable1 #Referance  the name of the variable
 # This is called partial quoting sometimes referred as "Weak Quoting"
 # Using single quotes('...') causes the variable name to be literally , and no  subustiution will take place.
 
+# Variable Assignment operator (no space before and after)
+#++++++++++++++Note "=" can be assignment operator  or a -eq which is a test operator 
+#Naked Variables
+#When a varaiable is Naked when it lacks the '$' in front of the variable 
+#At thy time is being assigned ,rather than referenced 

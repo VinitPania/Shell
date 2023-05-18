@@ -1,3 +1,4 @@
+#!/bin/bash
 # Variable assignment and substitution 
 a=374
 hello=$a
@@ -104,3 +105,33 @@ echo "$uninitialized_variable"  # 5
 
 # conclusion 
 # An unitialized variable has no value however it evaluates as 0 in an arithmetic operation
+
+
+
+#Plain Variable Assignment 
+
+#Assignment 
+a=121112; echo "The value of \"a\" is $a. "
+
+#Assignment using 'let'
+let a=1650+1660; echo "The value of \"a\"īs now $a. "
+
+echo 
+
+# In a for loop (really a type of disgusied assignment)
+echo "The value of \"a\" in for loop are :"
+for a in 88 1 232 11010
+do 
+    echo -n "$a"
+done 
+
+echo 
+echo 
+
+# In a read statment is also  type of assignment
+echo -n  " Enter balue of \"a\" "
+read a 
+echo "The value of \"a\" is $a "
+echo 
+
+
