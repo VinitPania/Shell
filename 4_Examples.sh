@@ -155,4 +155,50 @@ echo
 echo "$a"   #The quoted variables preserve the Whitespace
 
 
+# Integer or string Exprience 
+a=2332
+let "a += 1"    #Integer 
+echo "a = $a"   #a=2333
+echo            #Integer, still
+
+b=${a/23/BB}    #Substitute "BB" for "23".
+                #This transforms $b into a string 
+echo "b = $b"   #b = BB33
+declare -i b    #Declaring it as a integer but it dosen't help 
+echo "b = $b"   #b = BB33
+
+let "b += 1"    #BB33 + 1
+echo "b = $b"   # b = 1
+echo            # Bash sets the "integer value " of a string sets to 0.
+
+c=BB34
+echo "c = $c"   # c = BB34
+d=${c/BB/23}    # Subustitute "23" for "BB" .
+                #This makes $d an integer.
+echo "d =$d"    #d = 2334
+echo " d += 1 " #2334 + 1
+echo "d = $d "  # d = 2335
+echo 
+
+#What about Null variables and undeclared variables?
+e=''            #... Or e="" ... Or e= --> Null Variables 
+echo "f = $f"   # f =  --> Undeclared variables 
+echo "e = $e"   # e =
+let "e =+1"     #Arithmetic operations allowed on  null variables .
+let "f +=1"     #Arithmetic operations allowed?
+echo "e =$e"; echo "f =$f" Null variable ie "e" Transformed into variable and Undeclared variable also transformed into variable.
+echo
+
+#How ever
+let "f /= $undecl_var" #Divided by zero?
+# let: f/= : syntax error : operand expected (error token is " ")
+#Syntax error ! Variable $undecl_war is not set to zero here!
+
+let "f/= 0"
+#   let: f /= 0: division by 0 (error token is "0")
+#Expected behaviour 
+
+#Bash automatically sets the "integer value" of null to zero when performing an arithmetic operation
+
+
  

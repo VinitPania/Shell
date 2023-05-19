@@ -21,3 +21,11 @@ echo $variable1 #Referance  the name of the variable
 #Naked Variables
 #When a varaiable is Naked when it lacks the '$' in front of the variable 
 #At thy time is being assigned ,rather than referenced 
+
+
+#Bash Variable Are Untyped 
+#Bash does not segrate its variable by its type.Bash variable are charcter strings.
+#It permits arithmetic operations and comparision on variables 
+#The determining factor is whether the value of a variable contains only digit 
+
+
