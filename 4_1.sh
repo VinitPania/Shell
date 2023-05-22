@@ -23,9 +23,28 @@ echo $variable1 #Referance  the name of the variable
 #At thy time is being assigned ,rather than referenced 
 
 
-#Bash Variable Are Untyped 
+# +++++++++++++++++Bash Variable Are Untyped++++++++++++++++++++ 
 #Bash does not segrate its variable by its type.Bash variable are charcter strings.
 #It permits arithmetic operations and comparision on variables 
 #The determining factor is whether the value of a variable contains only digit 
+#untyped Variables are both blessing and a curse.
 
+#++++++++++++ Special types Variable +++++++++++++++++++
+
+#Local Variable 
+#Variable visible only within a code block or function 
+
+#Environment Variable
+#Variable that affect the behivour of the shell an user interface 
+
+#If a script sets a environment variables they need to be "exported " that is reported to the environment local to the script .This is the function of the ezport command 
+#A script can export variables only to child process that is only to the commands or processes.
+#Child processes cannot export variables to the parent processes 
+
+#Positional Parameters 
+#Arguments Passed to scripts from the command lines
+# command $0 $1 $2 $3 $4 and so on 
+#After the 9th the argumensts must be enclosed in the brackets for eg ${10}, ${11} etc
+# The Specials variables $* and $@ denote all psitional parameters 
+#
 
