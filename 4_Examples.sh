@@ -350,6 +350,30 @@ echo "$2"
 # When $2 shifts into $1 (and there is no $3 to shift into $2) then $2 remains empty
 #So , it is not a parameter *copy* , but a *move*.
 
+# Shift-past to a specific number
+
+shift 3 #Shift 3 positions.
+#n=3; shift $n
+#Has the same effect.
+
+echo "$1"
+
+#================================== #
+
+# $ sh shift-past.sh 1 2 3 4 5 
+4 
+# However attempting a 'shift' past the number of positional parameter ($#) 
+# retuerns an exit status of 1, and the positional parameters themselves do not change.
+# This mean posssibly getting stuck in an endless loop 
+# For example 
+# until [ -z  "$1" ]
+# do 
+#    echo -n "$1"
+#    shift 20    #If less than 20 positions params ,
+# done             then loops never ends 
+# When in doubt,add a sanity check 
+# shift 20 || break
+#           ^^^^^^^
 
 
  

@@ -66,4 +66,11 @@ echo $variable1 #Referance  the name of the variable
  # a large number of positional parameter to the script , shift lets you access 
  # those past 10 although {brackets} notation also premits this .
 
+# The shift command can take a numerical parameter parameter indicating how many positions to shift.
+
+
+# The functions also take positional parameters 
+# The process calling the scripts sets $0 parameters.By conventions , this parameter is the
+#  name of the script 
+# if the script is sourced or symlink then this will not work 
 
