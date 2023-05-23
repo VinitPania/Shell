@@ -46,5 +46,15 @@ echo $variable1 #Referance  the name of the variable
 # command $0 $1 $2 $3 $4 and so on 
 #After the 9th the argumensts must be enclosed in the brackets for eg ${10}, ${11} etc
 # The Specials variables $* and $@ denote all psitional parameters 
-#
+
+#Indirect Referencing
+# The Brackets notation for positional parameters leads to a fairly 
+#simple way of referncing the last arguments passed to a scripts on the command line 
+
+#If a script expects a command-line parameter but is invoked without one this may
+#cause a null variable assignment, generally an undesirable result.One Way to prevent this 
+#is to appned an extra character to both the sides of the assignment statments using 
+#the expected positional parameter.
+
+
 

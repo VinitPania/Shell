@@ -258,7 +258,7 @@ fi
 
 if [ -n "${10}" ]
 then 
-    echo "parameter  #10 ${10}
+    echo "parameter  #10 ${10}"
 fi 
 
 echo "======================================================="
@@ -271,4 +271,63 @@ then
     echo "This script need at least $MINPARAMS command-lines arguments!"
 fi 
 echo 
+
+#Indiect Referencing 
+
+args=$#
+lastargs=${!args}
+#Note : This is an *Indierct referencing* to $args
+
+#Or: lastargs=${!#}
+#This is an * indirect referencig * to the $# variable.
+# Note that lastargs=${!$#} dosen't work.
+
+variable1_=$1 #Rather than variable1_=$1
+#This will prevent an  error, Even if positional parameter is absent.
+critical_argument01=$variable1_
+
+#The extra character can be stripped later off .
+variable1=${variable1_/_/}
+#Side effect only if variable1_ begins with an underscore.
+#This uses one of the parameter subustitution.
+#(Leaving out the replacement pattern result in deletion)
+
+#A  more straightforword way of dealing with this is to simply test whether 
+#+expected positional parameter have been passed 
+
+if [ -z $1 ]
+then 
+    exit $E_MISSING_POS_PARAM
+fi
+
+
+# wh,whois domain name lookup
+#Does a 'Whois domanin-name ' lookup on any of 3 alternate servers:
+# ripe.net, cw.net, radb.net
+
+#Place this script -- renamed 'wh' in /usr/local/bin 
+
+#Requires symbolic links:
+# ls -s /usr/local/bin/wh /usr/local/bin/wh-ripe
+# ls -s /usr/local/bin/wh /usr/local/bin/wh-apnic 
+# ls -s /usr/local/bin/wh /usr/local/bin/wh-tucows
+
+E_NOARGS=75
+
+if [-z "$1" ]
+then 
+    echo "Usage: `basename $0` [domain-name]"
+    exit $E_NOARGS
+fi
+
+# Check Script name and call proper server.
+
+case `basename $0` in #or : case ${0##*/} in 
+    "wh" ) whois $1@whois.tucows.com;;
+    "wh-ripe" ) whois $1@whois.ripe.net;;
+    "wh-apnic" ) whois$1@whois.apnic.net;;
+    "wh-cw"    ) whois $1@whois.cw.net;;
+    *       )   echo "Usage : `basename $0` [domain-name]" ;;
+esac
+
  
