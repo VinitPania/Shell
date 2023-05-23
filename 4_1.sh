@@ -56,5 +56,14 @@ echo $variable1 #Referance  the name of the variable
 #is to appned an extra character to both the sides of the assignment statments using 
 #the expected positional parameter.
 
+#The Shift command ******************************
+
+#The Shift caommand reassigns the positional parameters , in the effect shifting them 
+# to the left one notch .
+
+ # $1<----$2,$2<----$3,$3<-----$4 etc
+ # The old $1 disappear but $0 (the script name ) does not change .If you uses 
+ # a large number of positional parameter to the script , shift lets you access 
+ # those past 10 although {brackets} notation also premits this .
 
 

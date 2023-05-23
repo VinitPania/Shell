@@ -330,4 +330,26 @@ case `basename $0` in #or : case ${0##*/} in
     *       )   echo "Usage : `basename $0` [domain-name]" ;;
 esac
 
+#Using Shift 
+
+#Using 'Shift' to step through all the positional parameters 
+#Name this script something like shft.sh and invoke it with some parameters.
+# For eg sh shft.sh a b c def 89 sodoor
+
+until [ -z "$1" ] # Untill all parameters used up ......
+do 
+    echo -n "$1"
+    shift
+done
+
+echo #Extra linefeed
+
+#But,What happens to the "used-up" parameters?
+echo "$2"
+#Nothing echoes !
+# When $2 shifts into $1 (and there is no $3 to shift into $2) then $2 remains empty
+#So , it is not a parameter *copy* , but a *move*.
+
+
+
  
