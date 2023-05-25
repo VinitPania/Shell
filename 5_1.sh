@@ -38,4 +38,24 @@
 # Single Quotes ('') operate similarly to double quotes, but do not permit referencing  variables,
 # since the special meaning of $ is turned off.
 #  Within single quotes every special character expect gets interpreted literally 
-# Considet single quotes ("full quoting") to be the stricter method of quoting than double quotes 
+# Considet single quotes ("full quoting") to be the stricter method of quoting than double quotes ("partial quoting").
+# Double quotes following the echo sometimes escape \. Moreover , the -e option to echo causes the "\t" to be interpreted as a tab
+#When Encapsulating "!" gives us an error when used from the command line .This is interpreted as a history command.
+# Writing the "!" in the script the problem wont occur since Bash History is disabled in the script
+
+
+
+
+##################################Escaping#########################################
+#Escaping is a method of quoting single character. The  escape (\) presceding a character tells a shell to interpret that character literally
+#while using the  "echo" and "sed" escaping a chahracter may have a opposite effect  -it can toggle the opposite meaning for that character.
+
+##Special meaning of certain character used with echo and sed  ###
+#   \n --> means newline 
+#   \r --> means return 
+#   \t --> means tab 
+#   \v --> means vertical tab 
+#   \b --> means backspace 
+#   \a --> means aleart (beep or flash )
+#   \0xx --> translate to octal  ASCII equivalant to 0nn, where nn is string of digits
+ 
