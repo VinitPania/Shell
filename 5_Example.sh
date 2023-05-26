@@ -120,7 +120,52 @@ echo  -e "\042" # Prints "(quotes , octal ASCII character 42)"
 echo "================"
 
 # The $'\X' construct makes the -e unnecessary.
-echo; echo "NEWLINE and (Beep) maybe::::::::i::  
+echo; echo "NEWLINE and (Beep) maybe"
+echo $'\n' #Newline.
+echo $'\a' #Alert(beep).
+           # Maybe only flash, not beep , depending on terminal.
+
+#We have seen $'\nnn' string expansion , and now . . .
+
+#Version 2 of the Bash intoduced the $'\nnn' string expansion construct.
+
+echo "Introducing the \$\'.... \ ' string -expansion construct . . ."
+echo ". . . fraturing more quotation marks "
+echo $'\t \042 \t ' # Quote (") framed by the tabs.
+# note that '\nnnn' is an octal value.
+
+
+#It aslo works with hexadecimal values, in an $'\xhhh' construct.
+echo $'\t \x22 \t' # Quote  (") framed by the tabs.
+#Earlier Bash version allowed '\x022'.
+
+
+echo 
+
+
+# Assigning  ASCII  character to a variable.
+quote=$'\042'  #" assigned to a variable.
+echo "$quote Quoted string $quote  and this lies outside the quotes."
+
+echo 
+
+# Concateenating ASCII char in a variable. 
+triple_underline=$'\137\137\137' # 137 is octal AsCII code for '_'.
+echo "$triple_underline UNDERLINE $triple_underline"
+
+echo 
+
+ABC=$'\101\102\103\010' # 101, 102, 103  are Octal A, B, C.
+echo $ABC
+echo 
+
+
+escape=$'\033'
+echo "\"escape\" echoes as $escape "
+#                                     no visible output 
+
+echo 
+
 
 
 
