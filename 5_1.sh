@@ -51,11 +51,17 @@
 #while using the  "echo" and "sed" escaping a chahracter may have a opposite effect  -it can toggle the opposite meaning for that character.
 
 ##Special meaning of certain character used with echo and sed  ###
-#   \n --> means newline 
-#   \r --> means return 
-#   \t --> means tab 
-#   \v --> means vertical tab 
-#   \b --> means backspace 
-#   \a --> means aleart (beep or flash )
+#   \n   --> means newline 
+#   \r   --> means return 
+#   \t   --> means tab 
+#   \v   --> means vertical tab 
+#   \b   --> means backspace 
+#   \a   --> means aleart (beep or flash )
 #   \0xx --> translate to octal  ASCII equivalant to 0nn, where nn is string of digits
- 
+#   \"   --> Gives Quote its literal meaning
+echo "Hello";echo "\"Hello\" ..... he said."     
+#   \$   --> Gives the Dollar sign its literal Meaning 
+echo "\$variable01";echo "The book cost \$420.69." 
+#   \\   --> Gives the backslash its literal meaning 
+# NOTE ----> THE BEHAVIOR OF \ DEPENDS ON WEATHER IT IS ESCAPED, STRONG-QUOTED, WEAK-QUOTED 
+# OR APPREARING WITHIN COMMAND SUBSTITUTION 

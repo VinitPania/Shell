@@ -166,7 +166,105 @@ echo "\"escape\" echoes as $escape "
 
 echo 
 
+################################################
+# A more elobrate example 
 
+key="no vlaue  yet"
+while true; do 
+    clear
+    echo "Bash Extra keys Demo . Keys to try;"
+    echo 
+    echo "* Insert, Delete, Home, End, Page_up, and Page_Down:"
+    echo "* The four arrow keys"
+    echo "* Tab, enter, escape, and space key"
+    echo "* The letter and number key, etc."
+    echo 
+    echo "d = show date/time"
+    echo "q = quit"
+    echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    echo 
 
+    #Convert the seperate home-key to home-key_num_7:
+    if [ "$key" = $'\x1b\x4f\x48' ]; then 
+    key=$'\x1b\x5b\x31\x7e'
+    # Quoted string-expansion construct.
+    fi 
 
+    #Convert the seperate end-key  to end-key_num_1.
+    if [ "$key" = $'\x1b\x4f\x46' ]; then 
+     key=$'\x1b\x5b\x34\x7e'
+    fi 
+    
+    case "$key" in 
+        $'\x1b\x5b\x32\x7e' ) #Insert
+            echo Insert Key 
+        ;;
+        $'\x1b\x5b\x33\x7e' ) #Delete 
+            echo Delete Key 
+        ;;
+        $'\x1b\x5b\x35\x7e' ) #Page_Up
+            echo Page Up
+        ;;
+        $'\x1b\x5b\x31\x7e' ) #Home_Key_num_7
+            echo Home Key 
+        ;;
+        $'\x1b\x5b\x34\x7e') #End_Key_num_1
+            echo End Key 
+        ;;
+        $'\x1b\x5b\x36\x7e' ) #Page_Down
+            echo Page Down 
+        ;;
+        $'\x1b\x5b\x41' )  #Up_arrow
+            echo Up Arrow
+        ;;
+        $'\x1b\x5b\x42' ) #Down Arrow
+            echo Down Arrow
+        ;;
+        $'\x1b\x5b\x43' ) #Right_Arrow
+            echo Right Arrow
+        ;;
+        $'\x1b\x5b\x44' ) #Left Arrow
+        echo Left Arrow
+        ;;
+        $'\x09' ) #Tab 
+            echo Tab Key 
+        ;;
+        $'\x0a' ) #Enter Key 
+            echo Enter Key 
+        ;;
+        $'\x1b' ) #Escape
+            echo Escape key 
+        ;;
+        $'\x20' ) #Space 
+            echo Space Key 
+        ;;
+        d)
+            date 
+        ;;
+        q)
+            echo Time to Quit
+            echo 
+            exit 0
+        ;;
+        *)
+            echo You Pressed : \' "$key"\'
+        ;;
+    esac 
 
+    echo 
+    echo "+++++++++++++++++++++++++"
+
+    unset K1 K2 K3 
+    read -s -N1 -p "Press a key: "
+    K1="$REPLY"
+    read -s -N1 -t 0.001
+    K2="$REPLY"
+    read -s -N1 -t 0.001
+    K3="$REPLY"
+    key="$K1$K2$K3"
+done
+
+#Elements of a string to a variable may be escaped variables but the escaped character alone may not be assigned to a variable.
+variable=\
+echo "$variable"
+#Will not work  - gives an error message 
