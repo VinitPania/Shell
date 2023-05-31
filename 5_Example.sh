@@ -267,4 +267,24 @@ done
 #Elements of a string to a variable may be escaped variables but the escaped character alone may not be assigned to a variable.
 variable=\
 echo "$variable"
-#Will not work  - gives an error message 
+#Will not work  - gives an error message
+#Elements of a string to a variable may be escaped , but the aescaped character 
+# alone may not be assigned  to a variable 
+
+#What actually happens here is  that the "\" escape the newline and  the effect is variable=echo  "$variable"
+
+variable=\
+23skidoo
+echo "$variable"  # 23skidoo
+                  # This work, since the second line is a valid variable assignment 
+
+variable=\\
+echo "$variable"    # \
+
+variable=\\\
+echo "$variable" #Gives an error message
+
+variable=\\\\
+echo "$variable"  #\\  Second and fourth escaped escaped.
+                  # This is o.k.
+            
