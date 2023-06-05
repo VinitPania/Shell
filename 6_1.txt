@@ -4,3 +4,10 @@ Every command return an exit or referred as a exit code.A successful execution o
 
 Likewise function within a script and the whole script return an exit status. The last command in the script determine the exit status.
 The exit status /code must be in the range of 0-255.
+
+When the script ends that has no parameter , the exit status of the script is the exit status of the last command which is executed in the script previous to the exit
+$? reads the exit status of the last command which is executed.
+
+By convention the 0 exit code means the program execution is success while non-zero means an error or anomaly
+Some exit status and code has reserved meaning and it should not be used in the script 
+ The reserved meaning code are as follows 1-2,126-165 and 255.
