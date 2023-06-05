@@ -1,0 +1,6 @@
+An exit command termite the script in the just as in  C program. It also return  a value which is accessible through the parent process.
+Every command return an exit or referred as a exit code.A successful execution of the script always return a 0  while unsuccessful 
+ returns a non-zero exit code.Well return script will always return a zero exit with some exception.
+
+Likewise function within a script and the whole script return an exit status. The last command in the script determine the exit status.
+The exit status /code must be in the range of 0-255.
