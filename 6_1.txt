@@ -11,3 +11,18 @@ $? reads the exit status of the last command which is executed.
 By convention the 0 exit code means the program execution is success while non-zero means an error or anomaly
 Some exit status and code has reserved meaning and it should not be used in the script 
  The reserved meaning code are as follows 1-2,126-165 and 255.
+
+
+
+ Reversed Meaning of the exit code :
+ 1 ----> catch all the general meaning error  eg : divide by zero error 
+ 2 ----> Misuse of general builtins   eg  : empty functions(){}
+126 ----> Command invoked cannot execute 
+127 ----> "command not found"
+128 -----> Invalid argument to exit 
+128+n ----> Fatal error signal "n"
+130 -----> Process terminated by the control+c action 
+255 -----> Exit statusout of  range 
+
+#Note Preceding a _pipe_ with ! inverts the exits status that returned.
+But it does not change the execution of the pipe only change the value of the exit code 
