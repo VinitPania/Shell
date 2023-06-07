@@ -1,3 +1,5 @@
+#!/bin/bash
+
 (( 0 && 1 )) #Logical AND
 echo $?  # 1
 
@@ -54,4 +56,16 @@ if COMMAND_WHOSE_EXIT_STATUS_IS_0_UNLESS_ERROR_OCCUREN
         echo "Command Failed"
 fi 
 
+# What is truth Example
+
+echo 
+
+
+echo "Testing \"0\" "
+if [ 0 ]  #zero
+then   
+    echo "0 is true."
+else           # Or Else .....
+    echo "0 is false."
+fi      # 0 is true 
 
