@@ -1,0 +1,17 @@
+Test Operation:
+Bash has a test command various bracket and parenthesis operation n if/else construct 
+
+7.1 Test Construct 
+
+An if/ele statement checks whether a the exit status of the script is 0 or not (since 0 means the script is executed success)
+and if so it execute one or more command 
+
+There is a dedicated special character called "["left bracket it is a synonym for the test  and a builtin for efficiency reason 
+Its command consider its arguments as a comparisons expression or file test or return an exit as a status code corresponding too  the  result of the comparisons(0 for true and 1 for false)
+
+With newer version of bash ie 2.02 it introduced the extended version of the test command [[ ]] which performs comparisons in a similar pattern in which human programers do.
+Note that [[ ]] --> is a keyword not a command.
+Bash sees [[ $a -lt $b  ]]  as a single element which returns a exit command /status 
+
+# The Exit status of arithmetic operation is not an error value 
+
