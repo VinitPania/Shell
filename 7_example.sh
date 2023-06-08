@@ -113,4 +113,49 @@ fi          # Uninitialized variable is false
 echo 
 
 echo "Testing \" -n \$xyz\""
-if [ -n "$xyz" ]  #More pedantically correct
+if [ -n "$xyz" ]  #More pedantically correct.
+    then 
+        echo "Uninitialized vaiable is true"
+    else    
+        echo  "Unitialized variable is false"
+fi          # Uninitialized variable is false 
+
+echo 
+
+xyz=
+echo  "Testing \"-n \$xyz\""
+if [ -n "$xyz" ]
+    then 
+        echo "Null Variable is true"
+    else
+        echo "Null variable is false"
+fi 
+
+echo 
+# When os "False" true?
+
+echo "Testing \"false\""
+if [ "false" ] # It seems that "False" is just a string 
+    then 
+        echo "\"false\"is true." # and it test true 
+    else 
+        echo "\"false\" is false "
+fi      "False is true "
+
+echo 
+
+echo "Testing \"\$false\""  #Again , unitialized variable,
+if [ "$false" ]
+    then 
+        echo "\"$false \" is true "
+    else 
+        echo "\"$false \" is false "
+fi          # "$false" is fasle .  Now we get the expected result 
+
+#What will happen if we tested the uninitialized variable "$true"?
+
+echo 
+
+
+
+
