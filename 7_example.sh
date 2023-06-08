@@ -69,3 +69,48 @@ else           # Or Else .....
     echo "0 is false."
 fi      # 0 is true 
 
+echo 
+
+echo "Testing\"1\""
+if [ 1 ]   #one 
+    then 
+        echo "1 is true"
+    else 
+        echo "1 is false"
+fi          # 1 is true 
+
+echo
+
+echo "Testing \"NULL\""
+if [ ]
+    then 
+        echo "NULL is true "
+    else 
+        echo "NULL is false "
+fi          #NUll is false 
+
+
+echo 
+
+echo "Testing \"xyz\""
+if [ xyz  ]
+    then 
+        echo "Random string is true "
+    else
+        echo "Random string is false"
+fi          # Random string is true 
+
+echo 
+
+echo "Testing \"\$xyz\""
+if [ $xyz ]     # Test if $xyz is null , but .... it's only uninitialized variable .
+    then 
+        echo "Uninitialized variable is true "
+    else 
+        echo "Unintialized variable is false . "
+fi          # Uninitialized variable is false 
+
+echo 
+
+echo "Testing \" -n \$xyz\""
+if [ -n "$xyz" ]  #More pedantically correct
