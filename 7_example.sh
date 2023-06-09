@@ -156,6 +156,46 @@ fi          # "$false" is fasle .  Now we get the expected result
 
 echo 
 
+# Equivalence of test , /usr/bin/test/[],and /usr/bin[
+
+echo
+
+if test -z "$1"
+    then 
+        echo "No command-line argument"
+    else 
+        echo "First command-line argument is $1"
+fi 
+
+echo 
+
+if /usr/bin/test -z "$1"     #Equivalant to "test" builtin
+    then 
+        echo "No Command-line is $1"
+    else    
+        echo "First commnand line is $1"
+fi 
+
+if [ -z "$1"]   # Functionally identical to above the code block.
+# if [ -z "$1"                 Should work but Bash respond to a missing close bracket with error message.
+    then 
+        echo "No commnand-line arguments ."
+    else
+        echo "First command-line argument is $1."
+fi 
+
+if /usr/bin/[ -z"$1"]   #Again functioally identical to above.
+# if /usr/bin/[ -z "$1" Works but gives an error message , This message is fixed in Bash version 3.x
+    then 
+        echo "No command-line arguments"
+        else 
+           echo  "First  command-line argument is $1" 
+fi 
+
+echo 
+
+
+
 
 
 

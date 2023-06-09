@@ -15,3 +15,14 @@ Bash sees [[ $a -lt $b  ]]  as a single element which returns a exit command /st
 
 # The Exit status of arithmetic operation is not an error value 
 
+NOTE ------>  When if and then are on same line in a condition test, a semicolon must terminate the if statement. Both the if and then are keyword
+keyword/command  begin statement before a new statement on the same line begin the old must be terminate 
+ if [ -x "$filename" ]; then 
+
+
+Else if and elif 
+
+elif ---->  is a contraction for else if .The effect is to nest an inner if/else construct within an outer one
+
+The if test condition-true construct is the exact equivalent of its if  [condition-true].As it happen the left bracket 
+[  is token which invokes the test command the closing ] right bracket is an if/test should not therefore be strictly necessary however the newer version of the Bash require it 
