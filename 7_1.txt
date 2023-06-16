@@ -25,4 +25,11 @@ Else if and elif
 elif ---->  is a contraction for else if .The effect is to nest an inner if/else construct within an outer one
 
 The if test condition-true construct is the exact equivalent of its if  [condition-true].As it happen the left bracket 
-[  is token which invokes the test command the closing ] right bracket is an if/test should not therefore be strictly necessary however the newer version of the Bash require it 
+[  is token which invokes the test command the closing ] right bracket is an if/test should not therefore be strictly necessary however the newer version of the Bash requires it.
+ 
+The [[ ]] construct is the more versatile Bash version of [ ]. 
+
+No filename expansion or word splitting takes place between [[ and ]], but there is a parameter expansion and command substitution.
+
+
+Using [[ this ]] rather than [ this ] can prevent many logical errors in scripts

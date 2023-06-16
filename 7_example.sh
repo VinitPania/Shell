@@ -194,6 +194,13 @@ fi
 
 echo 
 
+# Example of [[ ]] 
+
+file=/etc/paswd
+if [[ -e $file ]]
+    then    
+        echo "Password file exist"
+fi 
 
 
 
