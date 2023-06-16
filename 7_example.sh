@@ -202,7 +202,49 @@ if [[ -e $file ]]
         echo "Password file exist"
 fi 
 
+#Example of Octal and hexadecimal evaluation.
+
+decimal=15 
+hexadecimal=0x0f
+octal=017
+
+if [ "$decimal" -eq "$octal" ]
+    then 
+        echo "$decimal Equal $octal"
+    else 
+        echo "$decimal NotEqual $octal" #15 Not equal 017
+fi                  #Dosent evulate within [ Single Bracket ] !
+
+if [[ "$decimal" -eq  "$octal" ]]
+    then 
+        echo "$decimal Equal $octal" #15 is Equal to 017
+    else
+        echo "$decimal NotEqual $octal"
+fi                      #Evaluates if using [[ double bracckets  ]] 
+
+if [[ "$decimal" -eq "$hexadecimal" ]]
+    then 
+        echo "$decimal Equal $hexadecimal" #15 Equal 017
+    else 
+        echo "$decimal NotEqual $hexadecimal"
+fi                      #this also evaluate while use [[ Doube Brackets ]] 
+
+# Following an if, nither the test command nor the test brackets ([] or [[]]) are strictly necessary 
+dir=/home/bozo
+
+if cd "$dir" 2>/dev/null; then #"2>/dev/null" hides error messages 
+    echo "Now in $dir"
+else 
+    echo "Cant change to $dir"
+fi 
+# The "if COMMAND" gives the exit status of COMMAND
+
+#Similaraly, a condition within test brackets my stand alone without if , when used in combination with list construct
 
 
+var1=20
+var2=22
+[ "$var1" -ne "$var2"  ] && echo "$var1 is not equal to $var2"
 
-
+home=/home/bozo
+[ -d "$home" ] || echo "$home directory does not exist"

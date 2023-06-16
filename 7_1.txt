@@ -27,9 +27,17 @@ elif ---->  is a contraction for else if .The effect is to nest an inner if/else
 The if test condition-true construct is the exact equivalent of its if  [condition-true].As it happen the left bracket 
 [  is token which invokes the test command the closing ] right bracket is an if/test should not therefore be strictly necessary however the newer version of the Bash requires it.
  
-The [[ ]] construct is the more versatile Bash version of [ ]. 
+The [[ ]] construct is the more versatile Bash version of [ ]. This is an extended test command
 
 No filename expansion or word splitting takes place between [[ and ]], but there is a parameter expansion and command substitution.
 
 
-Using [[ this ]] rather than [ this ] can prevent many logical errors in scripts
+Using [[ this ]] rather than [ this ] can prevent many logical errors in scripts.For  example the && ,||, < and > operate within a [[]] test despite giving the error within [] construct.
+Arithmetic Evaluation of octal/hexadecimal constants takes place within a [[ ]] construct
+
+https://prod.liveshare.vsengsaas.visualstudio.com/join?41917C30F170E6AE2350F05FFEDDFC271EAF
+
+The (()) construct expands and evaluates an arithmetic expression. If the evaluates as zero , it return exit status of 1, or "false".A non-zero 
+returns a exit status of 0 ,or "True". This is in marked contrast using test and [] construct previously discussed.
+
+
