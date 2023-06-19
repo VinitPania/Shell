@@ -282,3 +282,16 @@ echo "Exit status of \"(( 1 \ 2 ))\" $? "           # Rounded off to zero
 echo "Exit status of \" (( 1 \  0 ))\" $? "     #1 
 
 #What effect does 2>/dev/null have ;What would happen if it were removed 
+# (( ... )) Also helps in IF then ELSE  case 
+
+val1=5
+val2=4
+
+if (( $val1 > $val2 ))
+    then 
+        echo "$var1 is greater than $val2"
+    
+    else 
+        echo "$val2 is greater then $val1"
+fi 
+
